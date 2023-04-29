@@ -77,8 +77,8 @@ if uploaded_file is not None:
 
         # monthly timeline of num of messages in group
 
-        df_timeline = helper.monthly_timeline(selected_user,df)
-
+        df_t = helper.monthly_timeline(selected_user,df)
+        df_timeline = df_t.to_numpy()
         fig,ax = plt.subplots()
         ax.plot(df_timeline['time'],df_timeline['message'], color='teal')
         plt.xticks(rotation='vertical')
